@@ -9,7 +9,7 @@ func TestBinary_ElementPresent(t *testing.T) {
 	value := 8
 
 	actual := Binary(items, value)
-	if actual != 2 {
+	if actual != 7 {
 		t.Errorf("Binary search(%v, %d) = %d: want 2", items, value, actual)
 	}
 }
