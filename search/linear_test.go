@@ -5,8 +5,8 @@ import (
 )
 
 func TestLinear_ElementPresent(t *testing.T) {
-	items := []int{1, 2, 3, 4, 5}
-	value := 3
+	items := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+	value := 8
 
 	actual := Linear(items, value)
 	if actual != 2 {
@@ -15,8 +15,8 @@ func TestLinear_ElementPresent(t *testing.T) {
 }
 
 func TestLinear_ElementNotPresent(t *testing.T) {
-	items := []int{1, 2, 3, 4, 5}
-	value := 6
+	items := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+	value := 25
 
 	actual := Linear(items, value)
 	if actual != -1 {
@@ -25,8 +25,8 @@ func TestLinear_ElementNotPresent(t *testing.T) {
 }
 
 func BenchmarkLinear(b *testing.B) {
-	items := []int{1, 2, 3, 4, 5}
-	value := 3
+	items := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+	value := 8
 
 	b.ResetTimer()
 
