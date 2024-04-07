@@ -4,7 +4,7 @@ func Binary(items []int, value int) int {
 	low := 0
 	high := len(items) - 1
 
-	for low < high {
+	for low <= high {
 		mid := int(low + (high-low)/2)
 
 		if items[mid] == value {
