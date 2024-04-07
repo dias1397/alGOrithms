@@ -15,6 +15,7 @@ func TestLinear(t *testing.T) {
 		{"Element in the middle", []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, 5, 4},
 		{"Element at the end", []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, 10, 9},
 		{"Element not present", []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, 25, -1},
+		{"Empty array", []int{}, 1, -1},
 	}
 
 	for _, tc := range testCases {
@@ -38,6 +39,7 @@ func BenchmarkLinear(b *testing.B) {
 		{"Element in the middle", []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, 5},
 		{"Element at the end", []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, 10},
 		{"Element not present", []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, 25},
+		{"Empty array", []int{}, 1},
 	}
 
 	for _, tc := range testCases {
