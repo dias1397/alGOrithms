@@ -64,19 +64,23 @@ func (list *Singly[T]) RemoveAt(index int) (element[T], error) {
 	return element[T]{}, nil
 }
 
-func (list *Singly[T]) Get(index int) (element[T], error) {
+func (list *Singly[T]) Get(index int) (T, error) {
 	if list.head == nil {
-		return element[T]{}, errors.New("Linked list is empty")
+		return *new(T), errors.New("Linked list is empty")
 	} else if index >= list.length {
-		return element[T]{}, errors.New("Index out of bounds")
+		return *new(T), errors.New("Index out of bounds")
 	} else {
 		current := list.head
 		for i := 0; i < index; i++ {
 			current = current.next
 		}
 
-		return *current, nil
+		return current.value, nil
 	}
+}
+
+func (list *Singly[T]) Size() int {
+	return list.length
 }
 
 func (list *Singly[T]) Display() {
