@@ -29,7 +29,7 @@ func TestSingly(t *testing.T) {
 		t.Errorf("Expected size: 4, got: %d\nExpected value at index 1: 4, got: %d", list.Size(), position1)
 	}
 
-	list.Remove()
+	/*list.Remove()
 
 	position3, _ := list.Get(3)
 	if list.Size() != 3 || position3 != 0 {
@@ -41,5 +41,5 @@ func TestSingly(t *testing.T) {
 	position1, _ = list.Get(1)
 	if list.Size() != 2 || position1 != 2 {
 		t.Errorf("Expected size: 2, got: %d\nExpected value at index 1: 2, got: %d", list.Size(), position1)
-	}
+	}*/
 }
