@@ -15,7 +15,7 @@ type element[T any] struct {
 	next  *element[T]
 }
 
-func (list *Singly[T]) Add(val T) {
+func (list *Singly[T]) Append(val T) {
 	node := element[T]{value: val}
 
 	if list.head == nil {
@@ -30,7 +30,20 @@ func (list *Singly[T]) Add(val T) {
 	list.length++
 }
 
-func (list *Singly[T]) AddAt(val T, index int) error {
+func (list *Singly[T]) Prepend(val T) {
+	node := element[T]{value: val}
+
+	if list.head == nil {
+		list.head = &node
+	} else {
+		node.next = list.head
+		list.head = &node
+	}
+
+	list.length++
+}
+
+func (list *Singly[T]) InsertAt(val T, index int) error {
 	if index > list.length {
 		return errors.New("Index out of bounds")
 	} else {
