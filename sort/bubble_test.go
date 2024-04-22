@@ -19,7 +19,7 @@ func TestBubble(t *testing.T) {
 		t.Run(tc.name, func(t *testing.T) {
 			got := Bubble(tc.items)
 
-			if slices.Equal(got, tc.want) {
+			if !slices.Equal(got, tc.want) {
 				t.Errorf("Bubble sort(%v) = %v: want %v", tc.items, got, tc.want)
 			}
 		})
